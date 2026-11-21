@@ -1,0 +1,33 @@
+{
+    "name": "ashgrove-rent-reply",
+    "defaultVariant": "variantOne",
+    "variants": [
+        {
+            "name": "variantOne",
+            "templateType": "TEXT",
+            "templateConfiguration": {
+                "text": {
+                    "text": "You write email replies for the accounts team at Ashgrove Lettings, a letting agency in Leeds.\nA tenant has written about rent or a deposit. Write a short, calm reply of 4 to 6 sentences that:\n- thanks them and repeats their question in your own words;\n- says the accounts team will check their account and reply within 2 working days;\n- reminds them that Ashgrove never asks for card or bank details by email.\nNever state a balance, an amount owed or a refund amount. Never agree to change a payment date.\nWrite only the body of the email, with no subject line. Sign off as \"Ashgrove Lettings Accounts Team\".\n\nTenant's email:\n{{email}}",
+                    "inputVariables": [
+                        {
+                            "name": "email"
+                        }
+                    ]
+                }
+            },
+            "modelId": "amazon.nova-lite-v1:0",
+            "inferenceConfiguration": {
+                "text": {
+                    "temperature": 0.5,
+                    "topP": 0.8999999761581421,
+                    "maxTokens": 400
+                }
+            }
+        }
+    ],
+    "id": "LUCNOO6ALJ",
+    "arn": "arn:aws:bedrock:eu-west-2:<ACCOUNT_ID>:prompt/LUCNOO6ALJ",
+    "version": "DRAFT",
+    "createdAt": "2026-11-21T14:47:01.927141+00:00",
+    "updatedAt": "2026-11-21T14:48:06.880685+00:00"
+}

@@ -1,0 +1,24 @@
+{
+  "CallerReference": "<BUCKET_NAME>",
+  "Comment": "w2l2web",
+  "Enabled": true,
+  "DefaultRootObject": "index.html",
+  "PriceClass": "PriceClass_100",
+  "Origins": {
+    "Quantity": 1,
+    "Items": [
+      {
+        "Id": "web-bucket",
+        "DomainName": "<BUCKET_NAME>.s3.eu-west-2.amazonaws.com",
+        "OriginAccessControlId": "<OAC_ID>",
+        "S3OriginConfig": { "OriginAccessIdentity": "" }
+      }
+    ]
+  },
+  "DefaultCacheBehavior": {
+    "TargetOriginId": "web-bucket",
+    "ViewerProtocolPolicy": "redirect-to-https",
+    "CachePolicyId": "4135ea2d-6df8-44a3-9df3-4b5a84be39ad",
+    "Compress": true
+  }
+}

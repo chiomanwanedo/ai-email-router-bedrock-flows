@@ -1,0 +1,48 @@
+id,expected,label,route,ok,input_tokens,output_tokens,nodes,cost_usd,all_pro_cost_usd,reply
+E01,repair,repair,repair,True,428,97,5,0.000235,0.001097,"Hi Daniel, thank you for letting us know about the dripping kitchen tap at 12 Moor View. We understand it has been troubling you for a week and is getting worse. A member of our maintenance team will contact you within two working days to arrange a convenient time for a visit. In the meantime, could you please send us one or two photos of the tap and let us know the best days and times to access your home? Ashgrove Lettings Maintenance Team"
+E02,repair,repair,repair,True,434,107,5,0.000239,0.001149,"Dear Amira,
+
+Thank you for letting us know about the broken latch on the back bedroom window at Flat 3, 41 Cardigan Road. We understand the window isn't closing properly, which is letting the cold in at night. A member of our maintenance team will contact you within two working days to arrange an appointment. In the meantime, could you please send us one or two photos of the problem, along with the days and times when someone can get into the home?
+
+Ashgrove Lettings Maintenance Team"
+E03,repair,repair,repair,True,424,106,5,0.000238,0.001133,"Thank you for your email, Tom. We understand that the washing machine in your flat is leaving a small puddle on the floor after each wash, and we appreciate you placing a towel down in the meantime. A member of our maintenance team will reach out to you within the next two working days to arrange a convenient time for an inspection. In the meantime, could you please send us one or two photos of the issue and let us know the best days and times to access your home? Ashgrove Lettings Maintenance Team"
+E04,viewing,viewing,viewing,True,425,76,5,0.000228,0.000999,"Thank you for your interest in the two-bedroom flat on Otley Road. A member of our lettings team will contact you within one working day to discuss viewing times. While we cannot confirm availability or specific viewing times at this stage, we will provide all the necessary details during our call. We look forward to assisting you further.  
+Ashgrove Lettings Team"
+E05,viewing,viewing,viewing,True,407,78,5,0.000227,0.000987,"Thank you for your interest in the house on Ash Grove. A member of our lettings team will contact you within the next working day to discuss viewing times and answer your question about the landlord's pet policy. While we cannot provide specific details without knowing the home's specifics, we will confirm all your queries during our call. Best wishes, Ashgrove Lettings Team"
+E06,viewing,viewing,viewing,True,425,83,5,0.00023,0.00103,"Thank you for your interest in the one-bedroom flat in Hyde Park, Marcus. A member of our lettings team will contact you within one working day to discuss viewing times and answer any additional questions you may have. While we cannot provide specific details about application requirements or guarantors without knowing the home's specifics, rest assured we will confirm everything during our call.  
+Ashgrove Lettings Team"
+E07,rent,rent,rent,True,428,71,5,0.000226,0.00098,"Dear Sophie,
+
+Thank you for your email. We understand you're concerned about two payments of £725 showing on your bank statement for October. We will review your account and respond with details within two working days. Please be assured that Ashgrove Lettings never requests card or bank details via email.
+
+Ashgrove Lettings Accounts Team"
+E08,rent,rent,rent,True,422,72,5,0.000226,0.000977,"Dear Kwame,
+
+Thank you for your email. We understand you are enquiring about the return of your deposit and whether it is protected. Our accounts team will review your account and respond with the relevant information within two working days. Please note, Ashgrove Lettings never asks for card or bank details by email.
+
+Ashgrove Lettings Accounts Team"
+E09,rent,rent,rent,True,430,68,5,0.000225,0.000968,"Hi Jess, thank you for your email. We understand that your wages are delayed this month due to a change in payroll. The accounts team will review your account and confirm the new payment date within two working days. Please note that Ashgrove Lettings never requests card or bank details via email. Ashgrove Lettings Accounts Team"
+E10,escalate,escalate,escalate,True,392,57,5,0.000205,0.000876,"PRIORITY: HIGH  
+WHY A PERSON IS NEEDED: Immediate action required due to potential gas leak  
+SUMMARY: Strong gas smell in kitchen at 5 Kirkstall Lane with children present  
+FIRST ACTION: Evacuate the premises immediately and contact emergency services"
+E11,escalate,escalate,escalate,True,399,52,5,0.000205,0.000861,"PRIORITY: HIGH  
+WHY A PERSON IS NEEDED: Urgent heating repair needed for elderly tenant  
+SUMMARY: Boiler failure causing no heating or hot water for elderly resident  
+FIRST ACTION: Dispatch technician immediately to 19 Beckett Street"
+E12,escalate,escalate,escalate,True,394,61,5,0.000206,0.000896,"PRIORITY: HIGH  
+WHY A PERSON IS NEEDED: Immediate response to a tenant threatening to visit the office  
+SUMMARY: Tenant demanding a response about their deposit and threatening to come to the office  
+FIRST ACTION: Contact tenant immediately to de-escalate situation and provide deposit information"
+E13,escalate,escalate,escalate,True,413,63,5,0.000208,0.000926,"PRIORITY: NORMAL
+WHY A PERSON IS NEEDED: To address tenant's complaint about ongoing damp and mould issues
+SUMMARY: Tenant R. Patel complains about unresolved damp and mould, seeking disrepair claim procedure
+FIRST ACTION: Respond to tenant with detailed complaints procedure and next steps"
+E14,escalate,escalate,escalate,True,420,72,5,0.00021,0.000975,"PRIORITY: HIGH  
+WHY A PERSON IS NEEDED: Immediate repair of water damage to prevent further flooding and potential mold.  
+SUMMARY: Water is leaking through the bathroom ceiling of Flat 2, 9 Headingley Mount from the flat above.  
+FIRST ACTION: Arrange for a plumber to inspect and repair the leak immediately."
+E15,escalate,escalate,escalate,True,393,57,5,0.000205,0.000877,"PRIORITY: NORMAL  
+WHY A PERSON IS NEEDED: To respond to a promotional email from a window-cleaning company  
+SUMMARY: Promotional email from a window-cleaning company offering a discount  
+FIRST ACTION: File this email in the promotional offers folder"

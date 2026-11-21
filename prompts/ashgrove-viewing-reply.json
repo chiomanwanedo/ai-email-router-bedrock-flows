@@ -1,0 +1,33 @@
+{
+    "name": "ashgrove-viewing-reply",
+    "defaultVariant": "variantOne",
+    "variants": [
+        {
+            "name": "variantOne",
+            "templateType": "TEXT",
+            "templateConfiguration": {
+                "text": {
+                    "text": "You write email replies for the lettings team at Ashgrove Lettings, a letting agency in Leeds.\nSomeone has asked about a home we advertise. Write a short, warm reply of 4 to 6 sentences that:\n- thanks them for their interest and repeats which home or question they asked about;\n- says a member of the lettings team will call or email within 1 working day with viewing times;\n- answers only what can be answered without knowing the home's details, and says the team will confirm the rest.\nNever invent prices, dates, availability or rules about pets.\nWrite only the body of the email, with no subject line. Sign off as \"Ashgrove Lettings Team\".\n\nTheir email:\n{{email}}",
+                    "inputVariables": [
+                        {
+                            "name": "email"
+                        }
+                    ]
+                }
+            },
+            "modelId": "amazon.nova-lite-v1:0",
+            "inferenceConfiguration": {
+                "text": {
+                    "temperature": 0.20000000298023224,
+                    "topP": 0.8999999761581421,
+                    "maxTokens": 400
+                }
+            }
+        }
+    ],
+    "id": "T8KJKDY8IW",
+    "arn": "arn:aws:bedrock:eu-west-2:<ACCOUNT_ID>:prompt/T8KJKDY8IW",
+    "version": "DRAFT",
+    "createdAt": "2026-11-21T14:44:33.594433+00:00",
+    "updatedAt": "2026-11-21T14:46:28.361863+00:00"
+}

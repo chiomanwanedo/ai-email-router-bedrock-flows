@@ -1,0 +1,33 @@
+{
+    "name": "ashgrove-repair-reply",
+    "defaultVariant": "variantOne",
+    "variants": [
+        {
+            "name": "variantOne",
+            "templateType": "TEXT",
+            "templateConfiguration": {
+                "text": {
+                    "text": "You write email replies for the maintenance team at Ashgrove Lettings, a letting agency in Leeds.\nA tenant has reported a repair. Write a short, friendly reply of 4 to 6 sentences that:\n- thanks them and repeats the problem in your own words, so they know we understood;\n- says a member of the maintenance team will contact them within 2 working days to arrange a visit;\n- asks for one or two photos and the days and times when someone can get into the home.\nDo not promise a date, a cost or a contractor. Do not give repair instructions.\nWrite only the body of the email, with no subject line. Sign off as \"Ashgrove Lettings Maintenance Team\".\n\nTenant's email:\n{{email}}",
+                    "inputVariables": [
+                        {
+                            "name": "email"
+                        }
+                    ]
+                }
+            },
+            "modelId": "amazon.nova-lite-v1:0",
+            "inferenceConfiguration": {
+                "text": {
+                    "temperature": 0.5,
+                    "topP": 0.8999999761581421,
+                    "maxTokens": 400
+                }
+            }
+        }
+    ],
+    "id": "1FSA6G1RJR",
+    "arn": "arn:aws:bedrock:eu-west-2:<ACCOUNT_ID>:prompt/1FSA6G1RJR",
+    "version": "DRAFT",
+    "createdAt": "2026-11-21T14:42:03.113144+00:00",
+    "updatedAt": "2026-11-21T14:44:12.229387+00:00"
+}

@@ -1,0 +1,413 @@
+{
+    "name": "ashgrove-email-router",
+    "description": "Routes Ashgrove emails to the right team or a person",
+    "executionRoleArn": "arn:aws:iam::<ACCOUNT_ID>:role/service-role/AmazonBedrockExecutionRoleForFlows_G0Z1USFJA1",
+    "id": "H6ES5YM611",
+    "arn": "arn:aws:bedrock:eu-west-2:<ACCOUNT_ID>:flow/H6ES5YM611",
+    "status": "Prepared",
+    "createdAt": "2026-11-21T14:54:24.858188+00:00",
+    "updatedAt": "2026-11-21T15:54:27.590382+00:00",
+    "version": "DRAFT",
+    "definition": {
+        "nodes": [
+            {
+                "name": "FlowInputNode",
+                "type": "Input",
+                "configuration": {
+                    "input": {}
+                },
+                "outputs": [
+                    {
+                        "name": "document",
+                        "type": "String"
+                    }
+                ]
+            },
+            {
+                "name": "EmailClassifier",
+                "type": "Prompt",
+                "configuration": {
+                    "prompt": {
+                        "sourceConfiguration": {
+                            "resource": {
+                                "promptArn": "arn:aws:bedrock:eu-west-2:<ACCOUNT_ID>:prompt/W34RG4G2K1:1"
+                            }
+                        }
+                    }
+                },
+                "inputs": [
+                    {
+                        "name": "email",
+                        "type": "String",
+                        "expression": "$.data"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "modelCompletion",
+                        "type": "String"
+                    }
+                ]
+            },
+            {
+                "name": "RepairOutput",
+                "type": "Output",
+                "configuration": {
+                    "output": {}
+                },
+                "inputs": [
+                    {
+                        "name": "document",
+                        "type": "String",
+                        "expression": "$.data"
+                    }
+                ]
+            },
+            {
+                "name": "RouteByLabel",
+                "type": "Condition",
+                "configuration": {
+                    "condition": {
+                        "conditions": [
+                            {
+                                "name": "isRepair",
+                                "expression": "label == \"repair\""
+                            },
+                            {
+                                "name": "isViewing",
+                                "expression": "label == \"viewing\""
+                            },
+                            {
+                                "name": "isRent",
+                                "expression": "label == \"rent\""
+                            },
+                            {
+                                "name": "default"
+                            }
+                        ]
+                    }
+                },
+                "inputs": [
+                    {
+                        "name": "label",
+                        "type": "String",
+                        "expression": "$.data"
+                    }
+                ]
+            },
+            {
+                "name": "RepairReply",
+                "type": "Prompt",
+                "configuration": {
+                    "prompt": {
+                        "sourceConfiguration": {
+                            "resource": {
+                                "promptArn": "arn:aws:bedrock:eu-west-2:<ACCOUNT_ID>:prompt/1FSA6G1RJR:1"
+                            }
+                        }
+                    }
+                },
+                "inputs": [
+                    {
+                        "name": "email",
+                        "type": "String",
+                        "expression": "$.data"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "modelCompletion",
+                        "type": "String"
+                    }
+                ]
+            },
+            {
+                "name": "ViewingReply",
+                "type": "Prompt",
+                "configuration": {
+                    "prompt": {
+                        "sourceConfiguration": {
+                            "resource": {
+                                "promptArn": "arn:aws:bedrock:eu-west-2:<ACCOUNT_ID>:prompt/T8KJKDY8IW:1"
+                            }
+                        }
+                    }
+                },
+                "inputs": [
+                    {
+                        "name": "email",
+                        "type": "String",
+                        "expression": "$.data"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "modelCompletion",
+                        "type": "String"
+                    }
+                ]
+            },
+            {
+                "name": "RentReply",
+                "type": "Prompt",
+                "configuration": {
+                    "prompt": {
+                        "sourceConfiguration": {
+                            "resource": {
+                                "promptArn": "arn:aws:bedrock:eu-west-2:<ACCOUNT_ID>:prompt/LUCNOO6ALJ:1"
+                            }
+                        }
+                    }
+                },
+                "inputs": [
+                    {
+                        "name": "email",
+                        "type": "String",
+                        "expression": "$.data"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "modelCompletion",
+                        "type": "String"
+                    }
+                ]
+            },
+            {
+                "name": "HandoverNote",
+                "type": "Prompt",
+                "configuration": {
+                    "prompt": {
+                        "sourceConfiguration": {
+                            "resource": {
+                                "promptArn": "arn:aws:bedrock:eu-west-2:<ACCOUNT_ID>:prompt/0KJFG96QTN:1"
+                            }
+                        }
+                    }
+                },
+                "inputs": [
+                    {
+                        "name": "email",
+                        "type": "String",
+                        "expression": "$.data"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "modelCompletion",
+                        "type": "String"
+                    }
+                ]
+            },
+            {
+                "name": "ViewingOutput",
+                "type": "Output",
+                "configuration": {
+                    "output": {}
+                },
+                "inputs": [
+                    {
+                        "name": "document",
+                        "type": "String",
+                        "expression": "$.data"
+                    }
+                ]
+            },
+            {
+                "name": "RentOutput",
+                "type": "Output",
+                "configuration": {
+                    "output": {}
+                },
+                "inputs": [
+                    {
+                        "name": "document",
+                        "type": "String",
+                        "expression": "$.data"
+                    }
+                ]
+            },
+            {
+                "name": "EscalateOutput",
+                "type": "Output",
+                "configuration": {
+                    "output": {}
+                },
+                "inputs": [
+                    {
+                        "name": "document",
+                        "type": "String",
+                        "expression": "$.data"
+                    }
+                ]
+            }
+        ],
+        "connections": [
+            {
+                "type": "Data",
+                "name": "FlowInputNodeFlowInputNode0ToEmailClassifierPromptsNode0",
+                "source": "FlowInputNode",
+                "target": "EmailClassifier",
+                "configuration": {
+                    "data": {
+                        "sourceOutput": "document",
+                        "targetInput": "email"
+                    }
+                }
+            },
+            {
+                "type": "Data",
+                "name": "EmailClassifierPromptsNode0ToRouteByLabelConditionNode0",
+                "source": "EmailClassifier",
+                "target": "RouteByLabel",
+                "configuration": {
+                    "data": {
+                        "sourceOutput": "modelCompletion",
+                        "targetInput": "label"
+                    }
+                }
+            },
+            {
+                "type": "Conditional",
+                "name": "RouteByLabelConditionNode0ToRepairReplyPromptsNode0",
+                "source": "RouteByLabel",
+                "target": "RepairReply",
+                "configuration": {
+                    "conditional": {
+                        "condition": "isRepair"
+                    }
+                }
+            },
+            {
+                "type": "Conditional",
+                "name": "RouteByLabelConditionNode1ToViewingReplyPromptsNode0",
+                "source": "RouteByLabel",
+                "target": "ViewingReply",
+                "configuration": {
+                    "conditional": {
+                        "condition": "isViewing"
+                    }
+                }
+            },
+            {
+                "type": "Conditional",
+                "name": "RouteByLabelConditionNode2ToRentReplyPromptsNode0",
+                "source": "RouteByLabel",
+                "target": "RentReply",
+                "configuration": {
+                    "conditional": {
+                        "condition": "isRent"
+                    }
+                }
+            },
+            {
+                "type": "Conditional",
+                "name": "RouteByLabelConditionNode1ToHandoverNotePromptsNode0",
+                "source": "RouteByLabel",
+                "target": "HandoverNote",
+                "configuration": {
+                    "conditional": {
+                        "condition": "default"
+                    }
+                }
+            },
+            {
+                "type": "Data",
+                "name": "FlowInputNodeFlowInputNode0ToRepairReplyPromptsNode0",
+                "source": "FlowInputNode",
+                "target": "RepairReply",
+                "configuration": {
+                    "data": {
+                        "sourceOutput": "document",
+                        "targetInput": "email"
+                    }
+                }
+            },
+            {
+                "type": "Data",
+                "name": "FlowInputNodeFlowInputNode0ToViewingReplyPromptsNode0",
+                "source": "FlowInputNode",
+                "target": "ViewingReply",
+                "configuration": {
+                    "data": {
+                        "sourceOutput": "document",
+                        "targetInput": "email"
+                    }
+                }
+            },
+            {
+                "type": "Data",
+                "name": "FlowInputNodeFlowInputNode0ToRentReplyPromptsNode0",
+                "source": "FlowInputNode",
+                "target": "RentReply",
+                "configuration": {
+                    "data": {
+                        "sourceOutput": "document",
+                        "targetInput": "email"
+                    }
+                }
+            },
+            {
+                "type": "Data",
+                "name": "FlowInputNodeFlowInputNode0ToHandoverNotePromptsNode0",
+                "source": "FlowInputNode",
+                "target": "HandoverNote",
+                "configuration": {
+                    "data": {
+                        "sourceOutput": "document",
+                        "targetInput": "email"
+                    }
+                }
+            },
+            {
+                "type": "Data",
+                "name": "RepairReplyPromptsNode0ToRepairOutputFlowOutputNode0",
+                "source": "RepairReply",
+                "target": "RepairOutput",
+                "configuration": {
+                    "data": {
+                        "sourceOutput": "modelCompletion",
+                        "targetInput": "document"
+                    }
+                }
+            },
+            {
+                "type": "Data",
+                "name": "ViewingReplyPromptsNode0ToViewingOutputFlowOutputNode0",
+                "source": "ViewingReply",
+                "target": "ViewingOutput",
+                "configuration": {
+                    "data": {
+                        "sourceOutput": "modelCompletion",
+                        "targetInput": "document"
+                    }
+                }
+            },
+            {
+                "type": "Data",
+                "name": "RentReplyPromptsNode0ToRentOutputFlowOutputNode0",
+                "source": "RentReply",
+                "target": "RentOutput",
+                "configuration": {
+                    "data": {
+                        "sourceOutput": "modelCompletion",
+                        "targetInput": "document"
+                    }
+                }
+            },
+            {
+                "type": "Data",
+                "name": "HandoverNotePromptsNode0ToEscalateOutputFlowOutputNode0",
+                "source": "HandoverNote",
+                "target": "EscalateOutput",
+                "configuration": {
+                    "data": {
+                        "sourceOutput": "modelCompletion",
+                        "targetInput": "document"
+                    }
+                }
+            }
+        ]
+    },
+    "validations": []
+}
